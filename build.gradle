@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        jcenter()
+        mavenCentral()
+    }
+    dependencies{
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE")
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+//所有工程的配置
+allprojects {
+    group 'com.polo'
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        jcenter()
+        mavenCentral()
+    }
+}
+
+//子项目的公共配置
+subprojects {
+    apply plugin: 'eclipse'
+    apply plugin: 'java'
+    ext {
+        springBootVersion = '2.0.2.RELEASE'
+        lombokVersion = '1.16.20'
+    }
+    dependencies {
+        compile("org.springframework.boot:spring-boot-starter:${springBootVersion}")
+        compileOnly("org.projectlombok:lombok:${lombokVersion}")
+        testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+    }
+}

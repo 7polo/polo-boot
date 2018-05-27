@@ -1,0 +1,5 @@
+rootProject.name = 'polo'
+include 'core'
+include 'web'
+
+
