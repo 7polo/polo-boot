@@ -1,0 +1,15 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.polo.core.dao.PoloFileDao">
+
+    <insert id="insert" parameterType="PoloFile">
+        <selectKey keyProperty="id" resultType="string" order="BEFORE">
+            select replace(uuid(), '-', '') as id from dual
+        </selectKey>
+        INSERT INTO t_polofile(`id`, `createDate`, `modifyDate`, `fileName`, `filePath`, `md5`, `size`, suffix)
+        VALUES (#{id}, now(), now(), #{fileName}, #{filePath}, #{md5}, #{size}, #{suffix});
+    </insert>
+
+    <select id="count" resultType="int">
+        select count(id) from t_polofile
+    </select>
+</mapper>

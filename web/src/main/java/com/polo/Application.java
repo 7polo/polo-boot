@@ -1,10 +1,12 @@
 package com.polo;
 
 import lombok.extern.slf4j.Slf4j;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,8 +15,9 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  * Date: 2018-05-27
  * Time: 15:21
  */
-@EnableAutoConfiguration
 @Slf4j
+@MapperScan("com.**.dao")
+@SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) throws Exception {
