@@ -1,15 +1,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.polo.core.dao.PoloFileDao">
 
+<!--    <sql id="sql_field">
+        id, createDate, modifyDate, fileName, filePath, md5, size, suffix
+    </sql>
+    <sql id="sql_value">
+        #{id}, now(), now(), #{fileName}, #{filePath}, #{md5}, #{size}, #{suffix}
+    </sql>
+
     <insert id="insert" parameterType="PoloFile">
         <selectKey keyProperty="id" resultType="string" order="BEFORE">
             select replace(uuid(), '-', '') as id from dual
         </selectKey>
-        INSERT INTO t_polofile(`id`, `createDate`, `modifyDate`, `fileName`, `filePath`, `md5`, `size`, suffix)
-        VALUES (#{id}, now(), now(), #{fileName}, #{filePath}, #{md5}, #{size}, #{suffix});
+        INSERT INTO t_polofile(<include refid="sql_field" /> )
+        VALUES (<include refid="sql_value" /> );
     </insert>
 
     <select id="count" resultType="java.lang.Integer">
         select count(id) from t_polofile
-    </select>
+    </select>-->
 </mapper>

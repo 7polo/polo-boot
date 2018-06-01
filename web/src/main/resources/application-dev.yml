@@ -27,7 +27,26 @@ spring:
       max-file-size: 100MB
       max-request-size: 100MB
 
-# mybatis
-mybatis:
-  config-location: classpath:mybatis-config.xml
+
+mybatis-plus:
   mapper-locations: classpath*:com/**/dao/mapper/*.xml
+  typeAliasesPackage: com.polo.*.entity
+  global-config:
+    id-type: 3
+    field-strategy: 2
+    #驼峰下划线转换
+    db-column-underline: false
+    #mp2.3+ 全局表前缀 mp_
+    #table-prefix: mp_
+    #刷新mapper 调试神器
+    refresh-mapper: true
+    #数据库大写下划线转换
+    #capital-mode: true
+    logic-delete-value: 1
+    logic-not-delete-value: 0
+    sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+    meta-object-handler: com.polo.core.base.MyMetaObjectHandler
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    jdbc-type-for-null: 'null'

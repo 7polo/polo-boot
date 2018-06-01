@@ -1,5 +1,6 @@
 package com.polo.core.entity;
 
+import com.baomidou.mybatisplus.annotations.TableName;
 import com.polo.core.base.BaseEntity;
 import lombok.Data;
 
@@ -14,7 +15,8 @@ import java.io.File;
  * @date: 2018-05-27 18:19
  */
 @Data
-public class PoloFile extends BaseEntity{
+@TableName("t_polofile")
+public class PoloFile extends BaseEntity<PoloFile>{
 
     /**
      * 文件的相对路径

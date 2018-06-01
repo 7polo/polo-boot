@@ -35,7 +35,7 @@ public class PolopictureApplicationTests {
         int count = poloFileDao.count();
         System.out.println(count);*/
         PoloFile file = new PoloFile();
-        file.setFileName("沙河21221");
+        file.setFileName("121");
         poloFileDao.insert(file);
 
     }

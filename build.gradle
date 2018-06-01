@@ -18,6 +18,7 @@ allprojects {
     group 'com.polo'
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
         jcenter()
         mavenCentral()
     }
@@ -30,8 +31,12 @@ subprojects {
     ext {
         springBootVersion = '2.0.2.RELEASE'
         lombokVersion = '1.16.20'
+        mpBootVersion= '2.1.9'
     }
     dependencies {
+        compile group: 'com.baomidou', name: 'mybatis-plus', version: '2.3'
+        compile("com.baomidou:mybatis-plus-boot-starter:${mpBootVersion}")
+
         compile("org.springframework.boot:spring-boot-starter:${springBootVersion}")
         compile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
         compile("org.springframework.boot:spring-boot-starter-aop:${springBootVersion}")
