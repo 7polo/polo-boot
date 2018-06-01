@@ -12,9 +12,9 @@ import java.util.Date;
  * @date: 2018-05-27 22:14
  */
 @Data
-public abstract class BaseEntity<T>{
+public abstract class BaseEntity {
 
-    protected T id;
+    protected String id;
 
     protected Date createDate;
 

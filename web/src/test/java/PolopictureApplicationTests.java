@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Date;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -27,8 +29,15 @@ public class PolopictureApplicationTests {
 
     @Test
     public void contextLoads() {
+       /* PoloFile file = new PoloFile();
+        file.setFileName("沙河");
+        poloFileDao.insert(file);
         int count = poloFileDao.count();
-        System.out.println(count);
+        System.out.println(count);*/
+        PoloFile file = new PoloFile();
+        file.setFileName("沙河21221");
+        poloFileDao.insert(file);
+
     }
 
 }

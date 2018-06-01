@@ -31,4 +31,3 @@ spring:
 mybatis:
   config-location: classpath:mybatis-config.xml
   mapper-locations: classpath*:com/**/dao/mapper/*.xml
-

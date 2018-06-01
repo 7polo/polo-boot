@@ -1,5 +1,6 @@
 package com.polo.core.dao;
 
+import com.polo.core.base.BaseDao;
 import com.polo.core.entity.PoloFile;
 import org.springframework.stereotype.Repository;
 
@@ -11,9 +12,6 @@ import org.springframework.stereotype.Repository;
  * @date: 2018-05-27 20:58
  */
 @Repository
-public interface PoloFileDao {
+public interface PoloFileDao extends BaseDao<PoloFile> {
 
-    String insert(PoloFile poloFile);
-
-    int count();
 }

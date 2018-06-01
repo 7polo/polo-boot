@@ -14,7 +14,7 @@ import java.io.File;
  * @date: 2018-05-27 18:19
  */
 @Data
-public class PoloFile extends BaseEntity<String> {
+public class PoloFile extends BaseEntity{
 
     /**
      * 文件的相对路径
@@ -48,4 +48,5 @@ public class PoloFile extends BaseEntity<String> {
     private long size;
 
     private transient File file;
+
 }
